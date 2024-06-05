@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+main{
+  display: flex;
+}
+
+button, ul, li{
+  margin: 0;
+  padding: 0;
+}
+
+.sideBar{
+  width: 200px;
+}
