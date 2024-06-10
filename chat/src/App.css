@@ -32,20 +32,119 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
-main{
+main {
   display: flex;
 }
 
-button, ul, li{
+button,
+ul,
+li {
   margin: 0;
   padding: 0;
 }
 
-.sideBar{
-  width: 200px;
+.sideBar {
+  width: 10%;
+  outline: 1px solid olive;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+div.friend ul {
+  text-align: left;
+}
+
+main div.chat {
+  width: 90%;
+  outline: 1px solid olive;
+}
+
+main .sideBar .btn {
+  outline: 1px solid #fff;
+}
+
+main .chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* main .chat .chat_list ul li{
+  width: 30%;
+  outline: 1px solid #ccc;
+  border-radius: 15px;
+} */
+
+/* main .chat .chat_list ul li:nth-child(odd){
+  background-color: #000;
+  color: #fff;
+  position: relative;
+  left: 0;
+} */
+
+/* main .chat .chat_list ul li:nth-child(even){
+  background-color: #ccc;
+  color: #000;
+  position: relative;
+  right: 0;
+} */
+
+/* .user1 ul, .user2 ul{
+  display: ;
+} */
+
+.user1 ul {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+
+.user1 ul li {
+  /* width: 30%; */
+  background-color: #ccc;
+  color: #000;
+  text-align: left;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.user2 ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.user2 ul li {
+  /* width: 30%; */
+  background-color: #fff;
+  color: #000;
+  text-align: right;
+  border: 1px solid #000;
+  border-radius: 10px;
+}
+
+.chat .form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1%;
+}
+
+.chat_layout {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+.chat_input {
+  width: 100%;
 }
