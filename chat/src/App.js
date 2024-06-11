@@ -3,45 +3,55 @@ import './App.css';
 import { Button, Container, Nav, Navbar, Row, Col, Form } from 'react-bootstrap';
 import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import Friend from './components/Friend.js';
+import Chat from './components/Chat.js';
 
 function App() {
-  let [friends, setFriends] = useState([]);
-  let [chats, setChats] = useState([]);
+
+  // 친구목록
+  // let [friends, setFriends] = useState([]);
+
+  // 대화목록
+  // let [chats, setChats] = useState([]);
+
+  // 메뉴이동 네비게이터
   let navigate = useNavigate();
 
   // sideBar useState
   let [sideBar, setSideBar] = useState(false);
 
-  useEffect(() => {
-    fetch('/data.json')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => setFriends(data.friend))
-      .catch(error => console.error('Error fetching data:', error));
-  }, []);
+  // 친구목록
+  // useEffect(() => {
+  //   fetch('/data.json')
+  //     .then(response => {
+  //       if (!response.ok) {
+  //         throw new Error('Network response was not ok');
+  //       }
+  //       return response.json();
+  //     })
+  //     .then(data => setFriends(data.friend))
+  //     .catch(error => console.error('Error fetching data:', error));
+  // }, []);
 
-  useEffect(() => {
-    fetch('/data.json')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => setChats(data.chat))
-      .catch(error => console.error('Error fetching data:', error));
-  }, []);
+  // 대화목록
+  // useEffect(() => {
+  //   fetch('/data.json')
+  //     .then(response => {
+  //       if (!response.ok) {
+  //         throw new Error('Network response was not ok');
+  //       }
+  //       return response.json();
+  //     })
+  //     .then(data => setChats(data.chat))
+  //     .catch(error => console.error('Error fetching data:', error));
+  // }, []);
 
   return (
 
     <div className="App">
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand onClick={() => { navigate('/') }}>NTR</Navbar.Brand>
+          <Navbar.Brand onClick={() => { navigate('/') }}>Chat</Navbar.Brand>
           <Nav className="me-auto">
             {/* <Nav.Link onClick={() => { navigate('/login') }}>Login</Nav.Link> */}
             {/* <Nav.Link onClick={() => { navigate('/login') }}>Login</Nav.Link> */}
@@ -51,26 +61,26 @@ function App() {
       </Navbar>
       <main>
         <div className='sideBar'>
-          <Button className='btn' variant="secondary" onClick={() => setSideBar(!sideBar)}>
+          {/* <Button className='btn' variant="secondary" onClick={() => setSideBar(!sideBar)}>
             {sideBar ? '닫기' : '친구목록'}
           </Button>{' '}
-          {/* <button onClick={ () => setSideBar(!sideBar) }>
-          { sideBar ? '닫기' : '열기'}
-        </button> */}
-          {/* <button>사이드바</button> */}
           {
             sideBar == true ? <FriendList friends={friends} /> : null
-          }
+          } */}
+          <Friend sideBar={sideBar} setSideBar={setSideBar} />
 
 
-
-          <Button className='btn' variant="secondary" onClick={() => setSideBar(!sideBar)}>
+          {/* <Button className='btn' variant="secondary" onClick={() => setSideBar(!sideBar)}>
             {sideBar ? '닫기' : '대화목록'}
           </Button>{' '}
           {
             sideBar == true ? <ChatList chats={chats} /> : null
-          }
+          } */}
+          {/* <button onClick={() => setSideBar(!sideBar)}>
+            {sideBar ? '닫기' : '열기'}
+            </button> */}
           {/* <ChatList chats={chats} /> */}
+          <Chat sideBar={sideBar} setSideBar={setSideBar} />
 
         </div>
 
@@ -109,50 +119,41 @@ function App() {
   );
 }
 
-{/* Friend */ }
-function FriendList(props) {
-  return (
-    <div className='friend'>
-      <h2>친구목록</h2>
-      <ul>
-        {props.friends.map(function (friend, i) {
-          return (
-            <li key={friend.id}>
-              {friend.title} ({friend.speed})
-            </li>
-          );
-        })}
-      </ul>
-    </div>
-  )
-}
+// Friend
+// function FriendList(props) {
+//   return (
+//     <div className='friend'>
+//       <h2>친구목록</h2>
+//       <ul>
+//         {props.friends.map(function (friend, i) {
+//           return (
+//             <li key={friend.id}>
+//               {friend.title} ({friend.speed})
+//             </li>
+//           );
+//         })}
+//       </ul>
+//     </div>
+//   )
+// }
 
-// { Chat }
-function ChatList(props) {
-  return (
-    <div className='friend'>
-      <h2>대화목록</h2>
-      {/* <ul>
-        {props.chats.map(function (chats, i) {
-          return (
-            <li key={chats.id}>
-              {chats.title} ({chats.speed})
-            </li>
-          );
-        })}
-      </ul> */}
-      <table>
-        {props.chats.map(function (chats, i) {
-          return (
-            <tr>
-              <td>{chats.title}</td>
-              <td>{chats.speed}</td>
-            </tr>
-          );
-        })}
-      </table>
-    </div>
-  )
-}
+// Chat 
+// function ChatList(props) {
+//   return (
+//     <div className='friend'>
+//       <h2>대화목록</h2>
+//       <table>
+//         {props.chats.map(function (chats, i) {
+//           return (
+//             <tr>
+//               <td>{chats.title}</td>
+//               <td>{chats.speed}</td>
+//             </tr>
+//           );
+//         })}
+//       </table>
+//     </div>
+//   )
+// }
 
 export default App;
