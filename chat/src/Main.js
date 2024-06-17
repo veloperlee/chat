@@ -50,15 +50,13 @@ function Main() {
   return (
 
     <div className="App">
-      <Routes>
-        <Route path="/notice" element={<Notice />}/>
-      </Routes>
 
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
           <Navbar.Brand onClick={() => { navigate('/') }}>Chat</Navbar.Brand>
           <Nav className="me-auto">
-            {/* <Nav.Link onClick={() => { navigate('/login') }}>Login</Nav.Link> */}
+            <Nav.Link onClick={() => { navigate('/notice') }}>공지사항</Nav.Link>
+            <Nav.Link onClick={() => { navigate('/date') }}>일정</Nav.Link>
             {/* <Nav.Link onClick={() => { navigate('/login') }}>Login</Nav.Link> */}
             {/* <Link to="/friend" className="nav-link">friend</Link> */}
           </Nav>
