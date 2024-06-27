@@ -1,7 +1,7 @@
 import './App.css';
 import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
-import Notice from './components/Notice.js';
-import MyCalendar from './components/MyCalendar.js';
+import Notice from './page/Notice.js';
+import MyCalendar from './page/MyCalendar.js';
 import Main from './Main.js';
 
 function App() {

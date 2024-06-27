@@ -156,3 +156,35 @@ main .chat {
 .chat_input {
   width: 100%;
 }
+
+
+
+
+/* calendar */
+.calendar_wrap{
+  display: flex;
+}
+
+.todo{
+  padding: 10px 20px;
+  border: 1px solid;
+}
+
+.inner{
+  text-align: left;
+}
+
+.inner li{
+  border-bottom: 1px solid;
+}
+
+div.list{
+  display: flex;
+  align-items: center;
+}
+
+.todo button.btn{
+  color: #fff;
+  padding: 5px 14px;
+  font-size: 10px;
+}

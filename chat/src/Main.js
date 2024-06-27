@@ -3,9 +3,11 @@ import './App.css';
 import { Button, Container, Nav, Navbar, Row, Col, Form } from 'react-bootstrap';
 import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import Friend from './components/Friend.js';
-import Chat from './components/Chat.js';
-import Notice from './components/Notice.js';
+import Friend from './page/Friend.js';
+import Chat from './page/Chat.js';
+import Notice from './page/Notice.js';
+import Header from './component/Header.js';
+
 
 function Main() {
 
@@ -50,18 +52,16 @@ function Main() {
   return (
 
     <div className="App">
-
-      <Navbar bg="dark" data-bs-theme="dark">
+      <Header />
+      {/* <Navbar bg="dark" data-bs-theme="dark">
         <Container>
           <Navbar.Brand onClick={() => { navigate('/') }}>Chat</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link onClick={() => { navigate('/notice') }}>공지사항</Nav.Link>
             <Nav.Link onClick={() => { navigate('/Calendar') }}>일정</Nav.Link>
-            {/* <Nav.Link onClick={() => { navigate('/login') }}>Login</Nav.Link> */}
-            {/* <Link to="/friend" className="nav-link">friend</Link> */}
           </Nav>
         </Container>
-      </Navbar>
+      </Navbar> */}
       <main>
         <div className='sideBar'>
           {/* <Button className='btn' variant="secondary" onClick={() => setSideBar(!sideBar)}>
